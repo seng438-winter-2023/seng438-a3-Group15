@@ -2,19 +2,21 @@
 
 **Lab. Report #3 – Code Coverage, Adequacy Criteria and Test Case Correlation**
 
-| Group \#:      |     |
-| -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| Group \#: 15          |     |
+| --------------------- | --- |
+| Student Names:        |     |
+| Carlos Morera Pinilla |     |
+| Neil Adrian Sarmiento |     |
+| Hassan Anwar          |     |
+| Toshi Biswas          |     |
 
 (Note that some labs require individual reports while others require one report
 for each group. Please see each lab document for details.)
 
 # 1 Introduction
 
-Text…
+Extending from our Black Box test suite from the previous lab on the JFreeGraph SUT. We will now be creating test cases using various White Box
+Techniques learned in class and depending on the class to test, employing various forms of coverage and attempting to improve the current code coverage from a exisiting test suite or creating a test suite for a class to get a certain threshold of coverage.
 
 # 2 Manual data-flow coverage calculations for X and Y methods
 
