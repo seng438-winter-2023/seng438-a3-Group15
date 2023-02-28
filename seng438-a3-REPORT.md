@@ -20,7 +20,8 @@ Techniques learned in class and depending on the class to test, employing variou
 
 # 2 Manual data-flow coverage calculations for X and Y methods
 
-Text…
+CALCULATECOLUMNTOTAL:
+![Control Flow  Graph for Column Total](./media/COLUMN_TOTAL_CFG.jpg)
 
 # 3 A detailed description of the testing strategy for the new unit test
 
@@ -36,11 +37,40 @@ Text…
 
 # 6 Pros and Cons of coverage tools used and Metrics you report
 
-Text…
+For this assignment, we decided to use OpenClover because during the execution, it automatically gives the classes, three different metrics. Statement, Branch and Method coverage. Eclemma did not make clear which coverage metric it was calculating, as it only reports the coverage ratio as a whole average of every different metric.
+
+Pros of OpenClover:
+
+- Easy to test and sort metrics of classes.
+- Much neater and easy to install.
+
+Pros of Eclemma:
+
+- Already included when you install Eclipse.
+- Easy to run tests.
+
+Cons of OpenClover:
+
+- Not as intuitive to run tests, you need to select the project as a whole to test.
+
+Cons of Eclemma:
+
+- Does not report the various metrics, it was hard to find out what metrics were being tested.
 
 # 7 A comparison on the advantages and disadvantages of requirements-based test generation and coverage-based test generation.
 
-Text…
+Advantages of Requirements-Based Testing:
+
+- Much quicker way to test important functionality of methods in a class.
+- Makes planning a test suite easier.
+- Ensures quickly that requirements are correct, complete and logically consisent.
+- Smaller Test Suite
+
+Advantages of Coverage-Based Testing:
+
+- Much more powerful in terms of testing logical execution of methods in a class.
+- Better at tracking and finding bugs in a system that are more obscure.
+- Due to more coverage of methods, it increases software quality indirectly.
 
 # 8 A discussion on how the team work/effort was divided and managed
 
@@ -48,7 +78,7 @@ Text…
 
 # 9 Any difficulties encountered, challenges overcome, and lessons learned from performing the lab
 
-Text…
+Getting the control flow coverage higher.
 
 # 10 Comments/feedback on the lab itself
 
