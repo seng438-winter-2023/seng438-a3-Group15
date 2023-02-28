@@ -21,7 +21,16 @@ Techniques learned in class and depending on the class to test, employing variou
 # 2 Manual data-flow coverage calculations for X and Y methods
 
 CALCULATECOLUMNTOTAL:
-![Control Flow  Graph for Column Total](./media/COLUMN_TOTAL_CFG.jpg)
+![Control Flow  Graph for Column Total](./media/Calculate_Column_CFG.jpg)
+
+- Def Use Table: (Where node 1 will be )
+  | Def | Use |
+  | --------------------- | --- |
+  | DEF() | |
+  | | |
+  | | |
+  | | |
+  | | |
 
 # 3 A detailed description of the testing strategy for the new unit test
 
