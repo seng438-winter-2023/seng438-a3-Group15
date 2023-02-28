@@ -1,9 +1,11 @@
 **SENG 438 - Software Testing, Reliability, and Quality**
+
 > **Assignment \#3**
->   **Introduction to Testing and Defect (Bug) Tracking**
->   Instructors: 
->   -   Dr. Behrouz Far (far@ucalgary.ca)
->   -   Dr. Kangsoo Kim (kangsoo.kim@ucalgary.ca)
+> **Introduction to Testing and Defect (Bug) Tracking**
+> Instructors:
+>
+> - Dr. Behrouz Far (far@ucalgary.ca)
+> - Dr. Kangsoo Kim (kangsoo.kim@ucalgary.ca)
 >   Department of Electrical and Software Engineering
 >   University of Calgary
 
@@ -56,7 +58,6 @@ Some coverage tools are listed below. You are free to choose your tool from that
 ## 1.4 System Under Test
 
 The system to be tested for this assignment is JFreeChart [2], the same SUT used in Assignment \#2. The JFreeChart framework is intended to be integrated into other systems as a quick and simple way to add charting functionality to other Java applications. With this in mind, the API for JFreeChart is required to be relatively simple to understand, as it is intended to be used by developers as an open source off-the-shelf framework
-
 
 # 2 Familiarization
 
