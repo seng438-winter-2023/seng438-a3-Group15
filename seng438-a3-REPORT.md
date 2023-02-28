@@ -26,11 +26,23 @@ CALCULATECOLUMNTOTAL:
 - Def Use Table: (Where node 1 will be )
   | Def | Use |
   | --------------------- | --- |
-  | DEF() | |
-  | | |
-  | | |
-  | | |
-  | | |
+  | DEF(0) = {data, column} | USE(0) = Ø |
+  | DEF(1) = Ø | USE(1) = data |
+  | DEF(2) = {total} | USE(2) = Ø |
+  | DEF(3) = {rowCount} | USE(3) = Ø |
+  | DEF(4) = {r} | USE(4) = Ø |
+  | DEF(5) = Ø | USE(5) = {r, rowCount}|
+  | DEF(6) = {r2} | USE(6) = Ø |
+  | DEF(7) = Ø | USE(7) = {r2, rowCount} |
+  | DEF(8) = {n} | USE(8) = {r2, column}|
+  | DEF(9) = Ø | USE(9) = {n}|
+  | DEF(10) = Ø | USE(10) = {r2}|
+  | DEF(11) = Ø | USE(11) = {total, n} |
+  | DEF(12) = Ø | USE(12) = Ø |
+  | DEF(13) = {n} | USE(13) = {data, r, column} |
+  | DEF(14) = Ø | USE(14) = {n} |
+  | DEF(15) = Ø| USE(15) = {total, n} |
+  | DEF(16) = Ø | USE(16) = {r}|
 
 # 3 A detailed description of the testing strategy for the new unit test
 
