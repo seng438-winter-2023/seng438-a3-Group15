@@ -98,7 +98,16 @@ RANGE.CONTAINS MANUAL CALCULATIONS:
 
 # 3 A detailed description of the testing strategy for the new unit test
 
-Text…
+Now that we have access to the source code, we will use that in combination with the Javadoc requirements of the JFreeChart SUT to improve our current standing test cases as well as design new test cases
+based on methods we have not tested yet.
+
+Based on our current tool, openClover we will cover Statement, Branch and Method Coverage(if a method has been executed at least once.)
+
+Toshi will handle the method coverage to ensure we have more methods to test in the class.
+
+Hassan will handle statement coverage to ensure most statement in each method are executed at least once.
+
+Neil and Carlos will handle Branch Coverage to ensure most statements are covered. Via the rule of thumb: (Test Cases = Pred Nodes + 1)
 
 # 4 A high level description of five selected test cases you have designed using coverage information, and how they have increased code coverage
 
