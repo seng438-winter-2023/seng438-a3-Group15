@@ -27,22 +27,46 @@ CALCULATECOLUMNTOTAL:
   | Def | Use |
   | --------------------- | --- |
   | DEF(0) = {data, column} | USE(0) = Ø |
-  | DEF(1) = Ø | USE(1) = data |
+  | DEF(1) = Ø | USE(1) = {data} |
   | DEF(2) = {total} | USE(2) = Ø |
-  | DEF(3) = {rowCount} | USE(3) = Ø |
+  | DEF(3) = {rowCount} | USE(3) = {data} |
   | DEF(4) = {r} | USE(4) = Ø |
   | DEF(5) = Ø | USE(5) = {r, rowCount}|
   | DEF(6) = {r2} | USE(6) = Ø |
   | DEF(7) = Ø | USE(7) = {r2, rowCount} |
-  | DEF(8) = {n} | USE(8) = {r2, column}|
+  | DEF(8) = {n} | USE(8) = {data, r2, column}|
   | DEF(9) = Ø | USE(9) = {n}|
   | DEF(10) = Ø | USE(10) = {r2}|
   | DEF(11) = Ø | USE(11) = {total, n} |
-  | DEF(12) = Ø | USE(12) = Ø |
+  | DEF(12) = Ø | USE(12) = {total} |
   | DEF(13) = {n} | USE(13) = {data, r, column} |
   | DEF(14) = Ø | USE(14) = {n} |
   | DEF(15) = Ø| USE(15) = {total, n} |
   | DEF(16) = Ø | USE(16) = {r}|
+- DU-Pairs for variables: (data, column, total, rowCount, r, r2, n) --> FORMAT: du(variable, defLine, useLine)
+
+  - du(data, 0, 1) = {[0, 1]} --> du(data, 0, 3) = {[0, 1, 2, 3]}
+    --> du(data, 0, 8) = {[0, 1, 2, 3, 4, 5, 6, 7, 8]} --> du(data, 0, 13) = {[0, 1, 2, 3, 4, 5, 13]}
+
+  - du(column, 0, 8) = {[0, 1, 2, 3, 4, 5, 6, 7, 8]} --> du(column, 0, 13) = {[0, 1, 2, 3, 4, 5, 13]}
+
+  - du(total, 2, 8) --> {[2, 3, 4, 5, 6, 7, 8]} --> du(total, 2, 11) --> {[2, 3, 4, 5, 6, 7, 8, 9, 11]} --> du(total, 2, 13) = {[2, 3, 4, 5, 13]} --> du(total, 2, 12) = {[2, 3, 4, 5, 6, 7, 12]}
+
+  - du(rowCount, 3, 5) = {[3, 4, 5]} --> du(rowCount, 3, 7) = {[3, 4, 5, 6, 7]}
+
+  - du(r, 4, 5) = {[4, 5]} --> du(r, 4, 16) = {[4, 5, 13, 14, 15, 16], [4, 5, 13, 14, 16]}
+
+  - du(r2, 6, 7) = {[6, 7]} --> du(r2, 6, 10) = {[6, 7, 8, 9, 10]}
+
+  - du(n, 8, 9) = {[8, 9]} --> du(n, 8, 11) = {[8, 9, 11]} --> du(n, 13, 14) = {[13, 14]} --> du(n, 13, 15) --> {[13, 14, 15]}
+
+- TEST CASE COVERAGE DU PAIRS FOR COLUMNS:
+
+  - testColumnSumValid(data, 0) = {(data, 0, 13), (column, 0, 13), (r, 4, 5), (r, 4, 13), (r, 4, 16), (r, 4, 12), (r2, 6, 7), (total, 2, 12), (total, 2, 15)}
+  - testColumnSumInvalid(data, 0) = {(data, 0, 13), (column, 0, 13), (r, 4, 5), (r, 4, 13), (r, 4, 16), (r, 4, 12), (r2, 6, 7), (total, 2, 12), (total, 2, 15)}
+
+  - DU-PAIR COVERAGE CALCULATION:
+    testColumnSumValid() = testColumnSumInvalid() = 9/18 = 50%
 
 # 3 A detailed description of the testing strategy for the new unit test
 
