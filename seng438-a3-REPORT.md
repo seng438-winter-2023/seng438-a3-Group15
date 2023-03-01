@@ -73,6 +73,29 @@ RANGE.CONTAINS MANUAL CALCULATIONS:
 - Control Flow Graph:
   !["Control Flow Graph of Range.contains"](./media/Range_Contains_CFG.jpg)
 
+- DEF-USE TABLE:
+  | Def | Use |
+  | --------------------- | --- |
+  | DEF(1) = {value} | USE(1) = Ø |
+  | DEF(2) = Ø | USE(3) = {value} |
+  | DEF(3) = Ø | USE(3) = Ø |
+  | DEF(4) = Ø | USE(4) = {value} |
+  | DEF(5) = Ø | USE(5) = {value} |
+  | DEF(6) = Ø | USE(6) = Ø |
+
+- DU-PAIRS for (value):
+
+  - du(value, 1, 2) = {[1, 2]} --> du(value, 1, 4) = {[1, 2, 4]} --> du(value, 1, 5) = {[1, 2, 4, 5]}
+
+- DU-PAIR COVERAGE FOR TEST CASES:
+  - testContainLower(): {du(value, 1, 5)}
+  - testContainUpper(): {du(value, 1, 5)}
+  - testContainBLB(): {du(value, 1, 2)}
+  - testContainAUB(): {du(value, 1, 4)}
+  - testContainNom(): {du(value, 1, 5)}
+    -DU-PAIR COVERAGE CALCULATIONS:
+    33% (or 1/3 to be exact) for all possible test cases.
+
 # 3 A detailed description of the testing strategy for the new unit test
 
 Text…
