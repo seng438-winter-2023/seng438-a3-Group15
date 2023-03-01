@@ -20,7 +20,7 @@ Techniques learned in class and depending on the class to test, employing variou
 
 # 2 Manual data-flow coverage calculations for X and Y methods
 
-CALCULATECOLUMNTOTAL:
+CALCULATECOLUMNTOTAL MANUAL CALCULATIONS:
 ![Control Flow  Graph for Column Total](./media/Calculate_Column_CFG.jpg)
 
 - Def Use Table: (Where node 1 will be )
@@ -66,7 +66,12 @@ CALCULATECOLUMNTOTAL:
   - testColumnSumInvalid(data, 0) = {(data, 0, 13), (column, 0, 13), (r, 4, 5), (r, 4, 13), (r, 4, 16), (r, 4, 12), (r2, 6, 7), (total, 2, 12), (total, 2, 15)}
 
   - DU-PAIR COVERAGE CALCULATION:
-    testColumnSumValid() = testColumnSumInvalid() = 9/18 = 50%
+    testColumnSumValid() = testColumnSumInvalid() = 9/20 = 45%
+
+RANGE.CONTAINS MANUAL CALCULATIONS:
+
+- Control Flow Graph:
+  !["Control Flow Graph of Range.contains"](./media/Range_Contains_CFG.jpg)
 
 # 3 A detailed description of the testing strategy for the new unit test
 
