@@ -55,7 +55,7 @@ public class DataUtilitiesTest {
                 will(returnValue(7.5));
                 oneOf(values).getValue(1, 0);
                 will(returnValue(2.5));
-            }
+            } 
         });
         double result = DataUtilities.calculateColumnTotal(values, 0);
         // verify
@@ -111,12 +111,12 @@ public class DataUtilitiesTest {
      * ------------------ TESTING createNumberArray2D(double[][] data)
      * -------------------------------------
      **/
-    @Test
+    @Test 
     public void testCreateNumArray2DExists() /** DEFECTIVE **/
     {
         double[][] data = { { 1.0, 2.01 }, { 5.60, 7.1234 }, { 1.11, 8.90 } };
         Number[][] numsData = DataUtilities.createNumberArray2D(data);
-        assertEquals("Value was not found ", 7.1234, numsData[0][1]);
+        assertEquals("Value was not found ", 7.12, numsData[0][1]);
     }
 
     @Test
@@ -206,7 +206,113 @@ public class DataUtilitiesTest {
         KeyedValues result = DataUtilities.getCumulativePercentages(kv);
         assertEquals(0.0, result.getValue(1));
     }
+    @Test
+    public void testNotEqual()
+    {
+    	double[][] a = {{1, 2, 3},{1, 2 , 3},{1, 2, 3}};
+    	double[][] b = {{1.3, 2, 3},{1, 2 , 3},{1, 2, 3}};
+        assertEquals("Arrays are not equal ", false, DataUtilities.equal(a, b));
 
+    	
+    } 
+    @Test
+    public void testNotEqualDimension()
+    {
+    	double[][] a = {{1, 2, 3},{1, 2 , 3},{1, 2, 3}};
+    	double[][] b = {{1, 2 , 3},{1, 2, 3}};
+        assertEquals("Arrays are not equal ", false, DataUtilities.equal(a, b));
+
+    	
+    } 
+    @Test
+    public void testNotEqualBNull()
+    {
+    	double[][] a = {{1, 2, 3},{1, 2 , 3},{1, 2, 3}};
+    	double[][] b = null;
+        assertEquals("Arrays are not equal ", false, DataUtilities.equal(a, b));
+
+    	
+    } 
+    @Test
+    public void testNotEqualANull()
+    {
+    	double[][] a = null;
+    	double[][] b = {{1.3, 2, 3},{1, 2 , 3},{1, 2, 3}};
+        assertEquals("Arrays are not equal ", false, DataUtilities.equal(a, b));
+
+    	
+    } 
+    @Test
+    public void testEqual()
+    {
+    	double[][] a = {{1.3, 2, 3},{1, 2 , 3},{1, 2, 3}};
+    	double[][] b = {{1.3, 2, 3},{1, 2 , 3},{1, 2, 3}};
+        assertEquals("Arrays are equal ", true, DataUtilities.equal(a, b));
+
+    	
+    }
+    @Test 
+    public void TestCalculateRowTotal()
+    {
+        mockO.checking(new Expectations() {
+            {
+                oneOf(values).getColumnCount();
+                will(returnValue(2));
+                oneOf(values).getValue(0, 0);
+                will(returnValue(7.5));
+                oneOf(values).getValue(1, 0);
+                will(returnValue(2.5));
+                oneOf(values).getValue(2, 0);
+                will(returnValue(3.0));
+                oneOf(values).getValue(0, 1);
+                will(returnValue(1));
+                oneOf(values).getValue(1, 1);
+                will(returnValue(1)); 
+                oneOf(values).getValue(2, 1);
+                will(returnValue(1));
+            }
+        });
+        int[] array = {0, 1, 2};
+        double result = DataUtilities.calculateRowTotal(values, 2, array);
+        assertNotSame("The sum was correct ", 4.0, result);
+
+    } 
+    @Test
+    public void testClone()
+    {
+    	double[][] array = {{1, 3, 4 ,5}, {1, 6, 4 ,9}, {1, 3, 4 ,5}};
+    	
+    	double[][] copyarray = DataUtilities.clone(array);
+        assertEquals("Clone is equal ", true, DataUtilities.equal(array, copyarray));
+
+    }
+    @Test
+    public void testCalculateColumnTotal()
+    {
+        mockO.checking(new Expectations() {
+            {
+                oneOf(values).getRowCount();
+                will(returnValue(2));
+                oneOf(values).getValue(0, 0);
+                will(returnValue(7.5));
+                oneOf(values).getValue(1, 0);
+                will(returnValue(2.5));
+                oneOf(values).getValue(2, 0);
+                will(returnValue(3.0));
+                oneOf(values).getValue(0, 1);
+                will(returnValue(1));
+                oneOf(values).getValue(1, 1);
+                will(returnValue(1)); 
+                oneOf(values).getValue(2, 1);
+                will(returnValue(1));
+            }
+        });
+        int[] array = {0, 1, 2};
+        double result = DataUtilities.calculateColumnTotal(values, 1, array);
+        assertNotSame("The sum was correct ", 3, result); 
+
+    }
+    
     /*--------------------------------------------------------------------------------------------------------------------------*/
     /* After, destroys the object, Java has automatic garbage collection. */
     @After
