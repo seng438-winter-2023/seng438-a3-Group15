@@ -111,11 +111,15 @@ Neil and Carlos will handle Branch Coverage to ensure most statements are covere
 
 # 4 A high level description of five selected test cases you have designed using coverage information, and how they have increased code coverage
 
-Text…
+Since Range was full of simple methods, in conjuction with the Control flow graphs of each method and the help of OpenClover, we managed to easily pick out quick methods to test each individual branch making sure it was tested at least once, thus vastly increasing branch and statement coverage.
+
+We did the same with DataUtilities using our knowledge of White box techniques and the graph to weed out predicate nodes, so that we know roughly how many test cases to design for each method.
 
 # 5 A detailed report of the coverage achieved of each class and method (a screen shot from the code cover results in green and red color would suffice)
 
-Text…
+Range.java Coverage of methods:
+
+- ![Range Coverage](./media/Range_Coverage.jpg)
 
 # 6 Pros and Cons of coverage tools used and Metrics you report
 
@@ -156,12 +160,16 @@ Advantages of Coverage-Based Testing:
 
 # 8 A discussion on how the team work/effort was divided and managed
 
-Text…
+Carlos - Report and Creating test cases to improve Coverage on Range
+Neil - Creating test cases to improve Coverage on DataUtilies
+Hassan - Report and adding statement coverage.
+Toshi - Report and adding some extra method coverage.
 
 # 9 Any difficulties encountered, challenges overcome, and lessons learned from performing the lab
 
-Getting the control flow coverage higher.
+Getting the control flow coverage higher and getting used to making test cases based on DFG branches and predicate nodes.
+As well as reading the Javadoc on a bunch of methods in the classes and having to look at the source code when the documentation was not clear.
 
 # 10 Comments/feedback on the lab itself
 
-Text…
+Vague, hard to follow but useful for putting WBT techniques into practice.
