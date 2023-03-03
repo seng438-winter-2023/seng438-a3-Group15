@@ -160,10 +160,10 @@ Advantages of Coverage-Based Testing:
 
 # 8 A discussion on how the team work/effort was divided and managed
 
-Carlos - Report and Creating test cases to improve Coverage on Range
-Neil - Creating test cases to improve Coverage on DataUtilies
-Hassan - Report and adding statement coverage.
-Toshi - Report and adding some extra method coverage.
+- Carlos - Report and Creating test cases to improve Coverage on Range
+- Neil - Creating test cases to improve Coverage on DataUtilies
+- Hassan - Report and adding statement coverage.
+- Toshi - Report and adding some extra method coverage.
 
 # 9 Any difficulties encountered, challenges overcome, and lessons learned from performing the lab
 
