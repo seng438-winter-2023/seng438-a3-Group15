@@ -117,7 +117,7 @@ We did the same with DataUtilities using our knowledge of White box techniques a
 
 # 5 A detailed report of the coverage achieved of each class and method (a screen shot from the code cover results in green and red color would suffice)
 
-## Order (Branch, Statement, Method)
+## Order Large Bar: (Total Coverage) --> Three Smaller Bars: (Branch, Statement, Method)
 
 DataUtilities.java Coverage of methods:
 
